@@ -50,7 +50,7 @@ To our knowledge, **AIMS.au** is the first and most extensive dataset with detai
 
 The following image illustrates the **correspondence between the AU MSA mandatory criteria** and the **questions designed for annotation** within the **AIMS.au** dataset. It also includes **fictitious examples** of disclosures that could appear in real corporate statements.  
 
-<img src="images/example.png" width="800">  
+<img src="example.png" width="800">  
 
 ---
 
@@ -58,7 +58,7 @@ The following image illustrates the **correspondence between the AU MSA mandator
 
 Below is an overview of the text distribution across **5,731 modern slavery statements** in our dataset.  
 
-<img src="images/stats.png" width="800">  
+<img src="stats.png" width="800">  
 
 ---
 
