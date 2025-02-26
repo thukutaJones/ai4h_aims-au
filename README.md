@@ -7,8 +7,8 @@
 
 We introduce **AIMS.au**, a publicly available dataset designed to support the analysis of modern slavery statements from Australian-based organizations. This dataset, released under the **CC-BY license**, aims to enhance the evaluation of Large Language Models (LLMs) in assessing corporate compliance with modern slavery reporting requirements.  
 
-This paper is part of a larger initiative, **Project AIMS (AI Against Modern Slavery)**.  
-🔗 Learn more: [Project AIMS](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims)
+🔗 This paper is part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
+
 ### Key Features  
 - **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**(https://modernslaveryregister.gov.au/).  
 - **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts. Basic reporting criteria, such as approval, signature, and identification of the reporting entity, were single-annotated. In contrast, more complex reporting criteria, requiring nuanced interpretation and greater scrutiny, were double-annotated for a subset of 4,657 statements.  
@@ -78,8 +78,6 @@ We conducted experiments using a range of **open-source and closed-source langua
   - **OpenAI GPT-4o** [(OpenAI, 2024)](https://arxiv.org/abs/2303.08774) *(Citing GPT-4 report, update for GPT-4o when available)*  
 
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards.  
-
-
 
 ---
 
