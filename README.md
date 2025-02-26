@@ -68,16 +68,16 @@ The code to reproduce our experimental results is available in the [`code`](code
 We conducted experiments using a range of **open-source and closed-source language models**, including:  
 
 - **Open-source models**:  
-  - **DistilBERT** [(Sanh et al., 2020)](https://arxiv.org/abs/1910.01108)  
-  - **BERT** [(Devlin et al., 2019)](https://arxiv.org/abs/1810.04805)  
-  - **LLaMA 2 (7B)** [(Touvron et al., 2023)](https://arxiv.org/abs/2302.13971)  
-  - **LLaMA 3.2 (3B)** [(Dubey et al., 2024)](https://arxiv.org/abs/2401.12345) *(Update with correct citation when available)*  
+  - **DistilBERT** 
+  - **BERT** 
+  - **LLaMA 2 (7B)** 
+  - **LLaMA 3.2 (3B)**
 
 - **Closed-source models**:  
   - **OpenAI GPT-3.5 Turbo**  
-  - **OpenAI GPT-4o** [(OpenAI, 2024)](https://arxiv.org/abs/2303.08774) *(Citing GPT-4 report, update for GPT-4o when available)*  
+  - **OpenAI GPT-4o**
 
-These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards.  
+These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards—full details in the paper. 
 
 ---
 
