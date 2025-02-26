@@ -50,7 +50,7 @@ To our knowledge, **AIMS.au** is the first and most extensive dataset with detai
 
 The following image illustrates the **correspondence between the AU MSA mandatory criteria** and the **questions designed for annotation** within the **AIMS.au** dataset. It also includes **fictitious examples** of disclosures that could appear in real corporate statements.  
 
-<img src="example.png" width="800">  
+<img src="exmaple.png" width="800">  
 
 ---
 
