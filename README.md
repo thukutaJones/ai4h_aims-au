@@ -1,6 +1,4 @@
 # AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
-
-*A dataset for evaluating corporate compliance with modern slavery regulations in Australia.*  
 *Appearing in ICLR 2025*  
 
 ---
@@ -9,6 +7,8 @@
 
 We introduce **AIMS.au**, a publicly available dataset designed to support the analysis of modern slavery statements from Australian-based organizations. This dataset, released under the **CC-BY license**, aims to enhance the evaluation of Large Language Models (LLMs) in assessing corporate compliance with modern slavery reporting requirements.  
 
+This paper is part of a larger initiative, **Project AIMS (AI Against Modern Slavery)**.  
+🔗 Learn more: [Project AIMS](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims)
 ### Key Features  
 - **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**(https://modernslaveryregister.gov.au/).  
 - **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts.  
@@ -18,14 +18,14 @@ We introduce **AIMS.au**, a publicly available dataset designed to support the a
 
 ### Data Structure  
 The dataset consists of three primary annotation levels:  
-1. **Hired annotators' labels** – Suitable for **model training**.  
+1. **Annotated dataset** – Suitable for **model training**.  
 2. **Gold subset (single expert validation)** – Recommended for **model validation**.  
 3. **Gold subset (triple-expert consensus)** – Reserved for **model testing**, ensuring the highest trust in model performance assessments.  
 <img src="diagram.png" width="800">
 
 By making this dataset publicly available, we aim to advance research in automated compliance verification, offering a valuable resource for developing tools that assist human experts in assessing corporate transparency and accountability.  
 
-To our knowledge, **AIMS.au** is the first and most extensive dataset with detailed annotations explicitly aligned with the **mandatory criteria** of the Australian **Modern Slavery Act (MSA)**.  
+To our knowledge, **AIMS.au** is the most extensive open source dataset with detailed annotations explicitly aligned with the **mandatory criteria** of the Australian **Modern Slavery Act (MSA)**.  
 
 ---
 
@@ -80,6 +80,7 @@ We conducted experiments using a range of **open-source and closed-source langua
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards.  
 
 
+
 ---
 
 ## Citation  
@@ -97,6 +98,5 @@ If you use **AIMS.au** in your research, please cite our paper:
   doi={10.48550/arXiv.2502.07022}
 }
 
-This paper is part of a larger initiative, **Project AIMS (AI Against Modern Slavery)**, which leverages artificial intelligence to combat modern slavery.  
-🔗 Learn more: [Project AIMS](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims)
+
 
