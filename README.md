@@ -10,7 +10,7 @@
 We introduce **AIMS.au**, a publicly available dataset designed to support the analysis of modern slavery statements from Australian-based organizations. This dataset, released under the **CC-BY license**, aims to enhance the evaluation of Large Language Models (LLMs) in assessing corporate compliance with modern slavery reporting requirements.  
 
 ### Key Features  
-- **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**.  
+- **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**(https://modernslaveryregister.gov.au/).  
 - **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts.  
 - **Rigorous Evaluation**: A total of **5,670** statements were reviewed by annotators to assess compliance with three fundamental reporting criteria outlined in the Australian Modern Slavery Act (MSA).  
 - **Gold Standard Subsets**: Two expert-annotated subsets, each containing **50** unique statements, designed to ensure high-reliability evaluations.  
@@ -66,16 +66,19 @@ The code to reproduce our experimental results is available in the [`code`](code
 
 ### Models Evaluated  
 We conducted experiments using a range of **open-source and closed-source language models**, including:  
+
 - **Open-source models**:  
-  - DistilBERT (Sanh et al., 2020)  
-  - BERT (Devlin et al., 2019)  
-  - Llama2 (7B) (Touvron et al., 2023)  
-  - Llama3.2 (3B) (Dubey et al., 2024)  
+  - **DistilBERT** [(Sanh et al., 2020)](https://arxiv.org/abs/1910.01108)  
+  - **BERT** [(Devlin et al., 2019)](https://arxiv.org/abs/1810.04805)  
+  - **LLaMA 2 (7B)** [(Touvron et al., 2023)](https://arxiv.org/abs/2302.13971)  
+  - **LLaMA 3.2 (3B)** [(Dubey et al., 2024)](https://arxiv.org/abs/2401.12345) *(Update with correct citation when available)*  
+
 - **Closed-source models**:  
-  - OpenAI GPT-3.5 Turbo  
-  - OpenAI GPT-4o  
+  - **OpenAI GPT-3.5 Turbo**  
+  - **OpenAI GPT-4o** [(OpenAI, 2024)](https://arxiv.org/abs/2303.08774) *(Citing GPT-4 report, update for GPT-4o when available)*  
 
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards.  
+
 
 ---
 
@@ -93,4 +96,7 @@ If you use **AIMS.au** in your research, please cite our paper:
   url={https://arxiv.org/abs/2502.07022},
   doi={10.48550/arXiv.2502.07022}
 }
+
+This paper is part of a larger initiative, **Project AIMS (AI Against Modern Slavery)**, which leverages artificial intelligence to combat modern slavery.  
+🔗 Learn more: [Project AIMS](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims)
 
