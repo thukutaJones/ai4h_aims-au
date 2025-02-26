@@ -1,52 +1,98 @@
-# AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements
-Analysis of modern slavery statements from Australian-based organizations.
+# AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
+
+*A dataset for evaluating corporate compliance with modern slavery regulations in Australia.*  
+
 <img src="diagram.png" width="800">
 
-*Appearing in ICLR 2025*
+*Appearing in ICLR 2025*  
 
-We are releasing under the CC-BY licence a new dataset in the field of Modern Slavery to help evaluate an finetune Large Language Models (LLMs) for the assessment of corrporate statements. The dataset is composed
-of 5,731 modern slavery statements taken from the Australian Modern Slavery Register and annotated at the sentence level.
+---
 
-This is a combination of modern slavery statements published in PDF format by corporate entities and of sentence-level labels provided by human annotators and domain expert analysts. A total of 5,670 statements were processed by hired annotators with respect to the three basic reporting criteria of the Act to determine whether each statement is approved, signed, and has a clearly-identified reporting entity. The other more advanced reporting criteria involve nuanced interpretations and required higher levels of scrutiny; for these, a subset of 4,657 statements that were found to be of a reasonable length were double annotated by hired annotators. Lastly, two specialized “gold” subsets with each 50 unique statements were created by experts to allow for evaluations with higher reliability across all criteria. The first gold subset was annotated by a single expert and validated through team discussions, while the second gold subset underwent a collaborative annotation process involving three experts. In all cases, disagreements were discussed until the experts achieved consensus. The final result is over 800,000 labeled sentences across 5,731 unique modern slavery statements covering 7,270 Australian entities between 2019 and 2023.
+## Overview  
 
-Given what is above, statements annotated by hired workers should be used for model training, while statements in the first “gold” subset should be used for model validation, and statements in the second gold
-subset should be used for model testing for optimal trust in model performance assessments. 
+We introduce **AIMS.au**, a publicly available dataset designed to support the analysis of modern slavery statements from Australian-based organizations. This dataset, released under the **CC-BY license**, aims to enhance the evaluation of Large Language Models (LLMs) in assessing corporate compliance with modern slavery reporting requirements.  
 
-By releasing this dataset, we firmly believe that it could serve as a key milestone in the development of tools dedicated in assisting human experts in verifying the compliance of corpoare statements, providing a foundation for further advancements in this area.
+### Key Features  
+- **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**.  
+- **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts.  
+- **Rigorous Evaluation**: A total of **5,670** statements were reviewed by annotators to assess compliance with three fundamental reporting criteria outlined in the Australian Modern Slavery Act (MSA).  
+- **Gold Standard Subsets**: Two expert-annotated subsets, each containing **50** unique statements, designed to ensure high-reliability evaluations.  
+- **Extensive Sentence-Level Data**: More than **800,000** labeled sentences covering **7,270** Australian entities from **2019 to 2023**.  
 
-To the best of our knowledge, this is the first large-scale dataset that includes fine-grained annotations with respect to the mandatory criteria as reuired my the Australian Modern Slavery Act (MSA).
+### Data Structure  
+The dataset consists of three primary annotation levels:  
+1. **Hired annotators' labels** – Suitable for **model training**.  
+2. **Gold subset (single expert validation)** – Recommended for **model validation**.  
+3. **Gold subset (triple-expert consensus)** – Reserved for **model testing**, ensuring the highest trust in model performance assessments.  
 
+By making this dataset publicly available, we aim to advance research in automated compliance verification, offering a valuable resource for developing tools that assist human experts in assessing corporate transparency and accountability.  
 
-- [AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements](#aims-au-a-dataset-for-the-analysis-of-modern-slavery-countermeasures-in-corporate-statements)
-  - [Availability](#availability)
-  - [Dataset documentation](#dataset-documentation)
-  - [Dataset statistics](#dataset-statistics)
-  - [Experiments](#experiments)
+To our knowledge, **AIMS.au** is the first and most extensive dataset with detailed annotations explicitly aligned with the **mandatory criteria** of the Australian **Modern Slavery Act (MSA)**.  
 
-## Availability
+---
 
-- Our **paper** is available on [arXiv](https://arxiv.org/abs/2502.07022).
-- The **dataset** on [figshare](https://figshare.com/articles/dataset/DDXPlus_Dataset/20043374) and [Huggingface](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
+## Table of Contents  
+- [Availability](#availability)  
+- [Dataset Documentation](#dataset-documentation)  
+- [Dataset Statistics](#dataset-statistics)  
+- [Experiments](#experiments)  
 
-<!-- #FIXME: check the date and add link-->
+---
 
-## Dataset documentation
+## Availability  
 
-The image below highlights correspondences between the AU MSA Mandatory Criteria and the questions designed for the annotation of the proposed AIMS.au dataset, with fictitious examples of disclosures that could be
-found in statements published by reporting entities.
+- 📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
+- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/articles/dataset/DDXPlus_Dataset/20043374) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).  
 
-<img src="images/example.png" width="800">
+---
 
-## Dataset statistics
+## Dataset Documentation  
 
-Here is an overview of the distribution of text across the 5,731 statements in our proposed dataset.
+The following image illustrates the **correspondence between the AU MSA mandatory criteria** and the **questions designed for annotation** within the **AIMS.au** dataset. It also includes **fictitious examples** of disclosures that could appear in real corporate statements.  
 
-<img src="images/stats.png" width="800">
+<img src="images/example.png" width="800">  
 
+---
 
+## Dataset Statistics  
 
-## Experiments
+Below is an overview of the text distribution across **5,731 modern slavery statements** in our dataset.  
 
-Code for reproducing results in the paper can be found in [`code`](code).
+<img src="images/stats.png" width="800">  
 
-In our paper, we conducted experiments using a range of language models that includes four open models — DistilBERT (Sanh et al., 2020), BERT (Devlin et al., 2019), Llama2 (7B) (Touvron et al., 2023) and Llama3.2 (3B) (Dubey et al., 2024) — and two closed models, namely OpenAI’s GPT3.5 Turbo and GPT4o.
+---
+
+## Experiments  
+
+The code to reproduce our experimental results is available in the [`code`](code) directory.  
+
+### Models Evaluated  
+We conducted experiments using a range of **open-source and closed-source language models**, including:  
+- **Open-source models**:  
+  - DistilBERT (Sanh et al., 2020)  
+  - BERT (Devlin et al., 2019)  
+  - Llama2 (7B) (Touvron et al., 2023)  
+  - Llama3.2 (3B) (Dubey et al., 2024)  
+- **Closed-source models**:  
+  - OpenAI GPT-3.5 Turbo  
+  - OpenAI GPT-4o  
+
+These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards.  
+
+---
+
+## Citation  
+
+If you use **AIMS.au** in your research, please cite our paper:  
+
+```bibtex
+@article{bora2025aimsau,
+  title={AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements},
+  author={Bora, Adriana Eufrosiana and St-Charles, Pierre-Luc and Bronzi, Mirko and Fansi Tchango, Arsène and Rousseau, Bruno and Mengersen, Kerrie},
+  journal={arXiv preprint arXiv:2502.07022},
+  year={2025},
+  note={Camera ready. ICLR 2025},
+  url={https://arxiv.org/abs/2502.07022},
+  doi={10.48550/arXiv.2502.07022}
+}
+
