@@ -40,7 +40,7 @@ To our knowledge, **AIMS.au** is the most extensive open source dataset with det
 
 - 📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
 - 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/account/projects/238964/articles/28489340)) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
-- 💬 **Prompts**: The prompts used in our experiments can be found in [**Prompts for GPTs Experiments**](PromptsforGPTs0Experiments_AIMS.au_ICLR.docx).
+- 💬 **Prompts**: The prompts used in our experiments can be found in [**Prompts for GPTs Experiments**](prompts.docx).
 
 ---
 
