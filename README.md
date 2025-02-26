@@ -1,9 +1,6 @@
 # AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
 
 *A dataset for evaluating corporate compliance with modern slavery regulations in Australia.*  
-
-<img src="diagram.png" width="800">
-
 *Appearing in ICLR 2025*  
 
 ---
@@ -24,6 +21,7 @@ The dataset consists of three primary annotation levels:
 1. **Hired annotators' labels** – Suitable for **model training**.  
 2. **Gold subset (single expert validation)** – Recommended for **model validation**.  
 3. **Gold subset (triple-expert consensus)** – Reserved for **model testing**, ensuring the highest trust in model performance assessments.  
+<img src="diagram.png" width="800">
 
 By making this dataset publicly available, we aim to advance research in automated compliance verification, offering a valuable resource for developing tools that assist human experts in assessing corporate transparency and accountability.  
 
