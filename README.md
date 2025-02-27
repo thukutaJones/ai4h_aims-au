@@ -39,7 +39,7 @@ To our knowledge, **AIMS.au** is the most extensive open source dataset with det
 ## Availability  
 
 - 📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
-- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/account/projects/238964/articles/28489340) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
+- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
 - 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
 
 ---
