@@ -10,7 +10,7 @@ We introduce **AIMS.au**, a publicly available dataset designed to support the a
 🔗 This paper is part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
 
 ### Key Features  
-- **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the **Australian Modern Slavery Register**(https://modernslaveryregister.gov.au/).  
+- **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the [**Australian Modern Slavery Register**](https://modernslaveryregister.gov.au/).  
 - **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts. Basic reporting criteria, such as approval, signature, and identification of the reporting entity, were single-annotated. In contrast, more complex reporting criteria, requiring nuanced interpretation and greater scrutiny, were double-annotated for a subset of 4,657 statements.  
 - **Gold Standard Subsets**: Two expert-annotated subsets, each containing **50** unique statements, designed to ensure high-reliability evaluations.  
 - **Extensive Sentence-Level Data**: More than **800,000** labeled sentences covering **7,270** Australian entities from **2019 to 2023**.  
@@ -39,7 +39,7 @@ To our knowledge, **AIMS.au** is the most extensive open source dataset with det
 ## Availability  
 
 - 📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
-- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/account/projects/238964/articles/28489340)) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
+- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/account/projects/238964/articles/28489340) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
 - 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
 
 ---
