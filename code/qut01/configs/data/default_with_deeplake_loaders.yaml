@@ -1,0 +1,20 @@
+# default definitions shared by data modules that rely on deeplake dataloaders
+
+datamodule: # this corresponds to the main LightningDataModule we'll be getting dataloaders from
+  _recursive_: False # we actually defer the full instantiation of params to the datamodule itself
+  _target_: ??? # MANDATORY class to be instantiated (should be derived from a pl.DataModule)
+  dataloader_configs: # note: subgroups here correspond to different loader types
+    _default_: # this group provides shared (but overridable) settings for all data loader types
+      _target_: qut01.data.dataset_parser.get_dataloader
+      batch_size: 1 # sets the default batch size for all data loaders to 1
+      drop_last: False
+      shuffle: False # the base default loader will not shuffle its data, but check overrides below!
+      shuffle_buffer_size: 2048 # the size of the buffer used to shuffle data (in MBs)
+      num_workers: ${utils.default_num_workers} # all loaders will run on a predefined thread count
+      collate_fn: # by default, we use the DataModule base class's impl (it handles batch IDs)
+        _partial_: True
+        _target_: qut01.data.default_collate
+      # prefetch_factor: 2
+      # persistent_workers: False
+    train: # this group will override the base settings for all train data loaders
+      shuffle: True # the training data loader should always shuffle its data (by default)

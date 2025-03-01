@@ -1,0 +1,41 @@
+# settings used for the data module that loads sentences from statements one at a time
+# (NOTE: returns batches with a fixed size, and statement sentences may be spread across batches)
+
+defaults:
+  - default.yaml # loads default settings for pytorch-dataloader-based data modules
+  - classification.yaml # loads default settings for the QUT01-AIMS classification dataset
+  - _self_
+
+sentence_batch_size: 256 # number of sentences loaded per data loader iteration
+sentence_buffer_size: 8192 # number of sentences loaded inside the iterable dataset wrapper
+
+batch_count_hints: # this is useful in case we want to roughly estimate the total batch count
+  train: ${ast_eval:'${data.approx_sentence_count}*${data.split_ratios.train}/${data.sentence_batch_size}'}
+  valid: ${ast_eval:'${data.approx_sentence_count}*${data.split_ratios.valid}/${data.sentence_batch_size}'}
+  test: 50 # arbitrary guess, should roughly correspond to the gold set size
+
+datamodule:
+  _target_: qut01.data.datamodules.sentence_sampler.DataModule
+  sentence_buffer_size: ${data.sentence_buffer_size}
+  shuffle_train_buffer: true
+  data_path: ${data.dataset_path}
+  classif_setup: ${data.classif_setup}
+  split_ratios: ${data.split_ratios}
+  split_seed: ${data.split_seed}
+  use_gold_set: ${data.use_gold_set}
+  expected_criteria_count: ${data.num_criteria}
+  dataparser_configs:
+    _default_: ${data.default_dataparser_config}
+    train:
+      batch_id_prefix: train
+    valid:
+      batch_id_prefix: valid
+    test:
+      batch_id_prefix: test
+  dataloader_configs:
+    _default_:
+      batch_size: ${data.sentence_batch_size}
+      collate_fn: ${data.sentence_collate_fn}
+    train:
+      shuffle: null # back to default, cannot set to True with iterable dataset
+      # note: the train dataset will still be shuffled (see `shuffle_train_buffer` above)

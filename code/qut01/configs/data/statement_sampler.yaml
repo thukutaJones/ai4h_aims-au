@@ -1,0 +1,34 @@
+# settings used for the data module that loads modern slavery statements one at a time
+# (NOTE: returns batches with varying sizes, as the number of sentences per statement varies)
+
+defaults:
+  - default.yaml # loads default settings for pytorch-dataloader-based data modules
+  - classification.yaml # loads default settings for the QUT01-AIMS classification dataset
+  - _self_
+
+statement_batch_size: 4 # number of STATEMENTS loaded per base parser iteration
+
+datamodule:
+  _target_: qut01.data.datamodules.statement_sampler.DataModule
+  data_path: ${data.dataset_path}
+  classif_setup: ${data.classif_setup}
+  split_ratios: ${data.split_ratios}
+  split_seed: ${data.split_seed}
+  use_gold_set: ${data.use_gold_set}
+  expected_criteria_count: ${data.num_criteria}
+  dataparser_configs:
+    _default_: ${data.default_dataparser_config}
+    train:
+      batch_id_prefix: train
+    valid:
+      batch_id_prefix: valid
+    test:
+      batch_id_prefix: test
+  dataloader_configs:
+    _default_:
+      # note: the "REAL" (sentence) batch size that the model sees depends on the length of the loaded statements
+      # ...if `random_subsample_count` is specified in data transforms, then the real batch size is:
+      #     real_batch_size = statement_batch_size * random_subsample_count
+      # otherwise, we have a variable sentence batch size that depends on the length of each statement
+      batch_size: ${data.statement_batch_size}
+      collate_fn: ${data.sentence_collate_fn}

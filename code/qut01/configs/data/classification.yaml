@@ -1,0 +1,76 @@
+# settings used in data modules for classification tasks based on the QUT01-AIMS dataset
+
+dataset_path: ${utils.data_root_dir}/statements.20231129.deeplake # for the raw dataset parser
+
+classif_setup: any # we will load statements with any annotated criteria
+#classif_setup: a-s-c1 # we will only load statements with (any of) these annotated criteria
+#classif_setup: c2-c3-c4-c5-c6 # we will only load statements with (any of) these annotated criteria
+
+approx_statement_count: 5000 # rough estimate for all annotated statements as of 2024-05-07
+approx_sentences_per_statement: 120 # very rough estimate, for debugging/logging only!
+approx_sentence_count: ${ast_eval:'${data.approx_sentences_per_statement}*${data.approx_sentences_per_statement}'}
+
+num_criteria: 11 # this is for the 'any' classification setup above (11 classes)
+#num_criteria: 3 # this is for the 'a-s-c1' classification setup above (3 classes)
+#num_criteria: 8 # this is for the 'c2-c3-c4-c5-c6' classification setup above (8 classes)
+
+num_classes: 2 # we always have a binary classification problem (for either relevance or evidence)
+
+label_ignore_index: -1 # used to ignore specific invalid ('dontcare') values in target tensors
+
+sample_strategy: all # all sentences will be individually sampled (whether annotated or not)
+#sample_strategy: subchunk # all sentences inside annotated text chunks will be individually sampled
+#sample_strategy: chunk # annotated text chunks (i.e. text chunks split by //) will be used as samples
+
+label_strategy: hard_union # assign label as positive for sentence if ANY annotator thinks it should be
+#label_strategy: hard_intersection # assign label as positive for sentence if ALL annotators think it should be
+#label_strategy: soft # assign label as the average of 0/1 values assigned by all annotators
+
+# by default, use no context:
+context_word_count: 0 # no extra context added (just use the target sentence)
+left_context_boundary_token: null
+right_context_boundary_token: null
+# example of how to use context:
+#context_word_count: 100 # add up to 100 words, split as 50 before and 50 after
+#left_context_boundary_token: "[SEP]"  # token inserted between left context and main sentence
+#right_context_boundary_token: "[SEP]"  # token inserted after main sentence and right context
+
+split_ratios: # should be shared by all datamodules (split done on clusters of trademarks/entities)
+  train: 0.98 # leaving out 2% (around 100 statements) as noisy validation for later eval
+  valid: 0.0
+split_seed: 0 # varying this should only impact the train/valid sets
+use_gold_set: true # determines whether to include the gold set on top of above split
+
+tokenizer: null # note: we do not use one by default, each model should define its own
+
+sentence_collate_fn:
+  _partial_: False
+  _target_: qut01.data.transforms.collate.StatementSentenceCollater
+  tokenizer: ${data.tokenizer}
+  apply_ignore_index: ${data.label_ignore_index}
+  keys_to_batch_manually: null
+  move_cls_token_to_target_sentence: true
+
+default_dataparser_config: # this will be used to parse raw statement data cross all datamodules
+  _target_: qut01.data.dataset_parser.DataParser # this is the raw statement data parser class
+  ignored_tensors:
+    - abbyy/json
+    - abbyy/xml
+    - abbyy/xml_as_json
+    - pdf_data
+  add_processed_data_to_batch: true
+  use_processed_data_cache: true
+  sentence_source_text_tensor: fitz/text # can be 'abbyy/text' or 'fitz/text'
+  batch_transforms:
+    - _target_: qut01.data.transforms.ConvertItemTensorsToItems
+      keys_to_ignore:
+    - _target_: qut01.data.transforms.SentenceSampler
+      classif_setup: ${data.classif_setup}
+      label_strategy: ${data.label_strategy}
+      sample_strategy: ${data.sample_strategy}
+      context_word_count: ${data.context_word_count}
+      left_context_boundary_token: ${data.left_context_boundary_token}
+      right_context_boundary_token: ${data.right_context_boundary_token}
+      randomly_merge_irrelevant_sentences: false
+      random_subsample_count: null
+      use_chunks_from_viz_elems: true
