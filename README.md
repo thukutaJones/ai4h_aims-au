@@ -9,6 +9,8 @@ We introduce **AIMS.au**, a publicly available dataset designed to support the a
 
 🔗 This paper is part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
 
+This research was developed in collaboration between Mila - Quebec AI Institute and The Queensland University of Technology.
+
 ### Key Features  
 - **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the [**Australian Modern Slavery Register**](https://modernslaveryregister.gov.au/).  
 - **Detailed Annotations**: Sentence-level labels assigned by human annotators and domain experts. Basic reporting criteria, such as approval, signature, and identification of the reporting entity, were single-annotated. In contrast, more complex reporting criteria, requiring nuanced interpretation and greater scrutiny, were double-annotated for a subset of 4,657 statements.  
