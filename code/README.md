@@ -1,6 +1,6 @@
 <div align="center">
 
-# QUT01 AI Against Modern Slavery (AIMS) Project Sandbox
+# Project AI Against Modern Slavery (AIMS)  Sandbox
 
 [![PyTorch](https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white)](https://pytorch.org/get-started/locally/)
 [![Lightning](https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white)](https://lightning.ai/)
