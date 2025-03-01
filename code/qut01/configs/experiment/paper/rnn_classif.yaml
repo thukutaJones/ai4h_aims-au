@@ -1,0 +1,75 @@
+# @package _global_
+
+# To execute this experiment, run one of the entrypoints while specifying this config, e.g.:
+#     python train.py experiment=rnn_classif.yaml
+
+defaults:
+  - /model/optimization: default.yaml
+  - /model/metrics: multi_label_metrics.yaml
+  # - /model/metrics: binary_classifier_metrics.yaml # use this for binary classifier
+  - override /model: binary_cross_entropy.yaml
+  - override /data: sentence_sampler.yaml
+  - override /callbacks: classification.yaml
+  - override /logger:
+      - tensorboard.yaml
+  - _self_
+
+experiment_name: rnn_classif # experiment name used in output paths
+vocab_size: 30522 # same as BERT
+hidden_size: 256 # much smaller than BERT (which has 768)
+target_label_key: relevance # tensor used for model training/evaluation purposes
+target_metric: valid/f1 # name of the metric we will be targeting for hparam optimization
+target_metric_mode: max # optimization mode of the target metric defined above
+
+utils:
+  print_config: True
+  project_name: ${utils.framework_name}-rnn # name for all experiments with rnn backbones
+  default_num_workers: 4
+
+model: # specifies which LightningModule-derived implementation provides the training/inference logic
+  _recursive_: False
+  _target_: qut01.models.classif.rnn.RNNClassifier
+  embedding:
+    _target_: torch.nn.Embedding
+    num_embeddings: ${vocab_size}
+    embedding_dim: ${hidden_size}
+  encoder:
+    _target_: torch.nn.LSTM
+    input_size: ${hidden_size}
+    hidden_size: ${hidden_size}
+    num_layers: 4
+    batch_first: true
+    dropout: 0.1
+    bidirectional: false
+  head:
+    _target_: qut01.models.components.simple_mlp.SimpleMLP
+    in_channels: ${hidden_size}
+    hidden_channels:
+      - ${hidden_size}
+    out_channels: ${data.num_criteria}
+    with_batch_norm: false
+    dropout: 0.1
+  num_output_classes: ${data.num_criteria}
+  output_tensor_extra_dims:
+    - ${data.num_criteria}
+  freeze_embedding_model: false
+  freeze_encoder_model: false
+  label_key: ${target_label_key}
+  sample_count_to_render: 10 # approximate/optimistic upper bound; increase if needed!
+  ignore_index: ${data.label_ignore_index} # only applicable when using hard labels
+  log_train_batch_size_each_step: true
+  batch_count_hints: ${data.batch_count_hints} # need to specify hints due to iterable data loader
+
+data:
+  sentence_batch_size: 256 # number of sentences loaded per data loader iteration
+
+trainer:
+  precision: 16-mixed
+  max_epochs: 20
+  log_every_n_steps: 1
+  num_sanity_val_steps: -1
+
+profiler: # in case we run the data profiler, these are the modified setting to use
+  use_parser: False
+  batch_count: 100
+  loop_count: 10
