@@ -1,0 +1,15 @@
+# For more information on the following hyperparameters, see the Lightning documentation:
+# https://lightning.ai/docs/pytorch/stable/api/lightning.pytorch.loggers.mlflow.html
+# (parameters and defaults last checked on 2023/10/04 for Lightning 2.0.1)
+
+mlflow:
+  _target_: lightning.pytorch.loggers.mlflow.MLFlowLogger
+  experiment_name: ${experiment_name} # name of the experiment also used in mlflow
+  run_name: ${utils.run_and_job_name} # run name (if multi-run/job); auto-set if needed
+  tracking_uri: file:${utils.output_dir_prefix}/mlruns/ # run `mlflow ui` in parent to open the UI
+  tags: null # a list of tags to use for this run (used to facilitate filtering in the UI)
+  save_dir: ${utils.output_dir_prefix}/mlruns/ # optional, should not have an effect w/ tracking uri
+  # log_model: False # toggles whether to log checkpoints or not ('all'/True/False)
+  prefix: "" # the string to prefix to all metric keys that will be logged
+  artifact_location: null # artifact storing location, if it needs to be different from the logs
+  run_id: # optional run identifier, has to be in mlflow-accepted format (quite annoying)

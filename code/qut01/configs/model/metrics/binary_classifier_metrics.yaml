@@ -1,0 +1,20 @@
+# metrics for a single label classifier
+accuracy:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+  task: binary
+  ignore_index: ${data.label_ignore_index}
+
+f1:
+  _target_: torchmetrics.classification.F1Score
+  task: binary
+  ignore_index: ${data.label_ignore_index}
+
+precision:
+  _target_: torchmetrics.classification.Precision
+  task: binary
+  ignore_index: ${data.label_ignore_index}
+
+recall:
+  _target_: torchmetrics.classification.Recall
+  task: binary
+  ignore_index: ${data.label_ignore_index}

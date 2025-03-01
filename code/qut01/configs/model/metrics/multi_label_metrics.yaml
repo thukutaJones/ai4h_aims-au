@@ -1,0 +1,57 @@
+# metrics for multi-label classifiers
+accuracy-macro:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  ignore_index: ${data.label_ignore_index}
+accuracy:
+  _target_: torchmetrics.classification.accuracy.Accuracy
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: none
+  ignore_index: ${data.label_ignore_index}
+f1-macro:
+  _target_: torchmetrics.classification.F1Score
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: macro
+  ignore_index: ${data.label_ignore_index}
+f1:
+  _target_: torchmetrics.classification.F1Score
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: none
+  ignore_index: ${data.label_ignore_index}
+
+precision-macro:
+  _target_: torchmetrics.classification.Precision
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: macro
+  ignore_index: ${data.label_ignore_index}
+precision:
+  _target_: torchmetrics.classification.Precision
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: none
+  ignore_index: ${data.label_ignore_index}
+recall-macro:
+  _target_: torchmetrics.classification.Recall
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: macro
+  ignore_index: ${data.label_ignore_index}
+recall:
+  _target_: torchmetrics.classification.Recall
+  task: multilabel
+  num_labels: ${data.num_criteria}
+  threshold: 0.5
+  average: none
+  ignore_index: ${data.label_ignore_index}

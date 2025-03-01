@@ -1,0 +1,8 @@
+# binary cross-entropy - ignores the -1 value in targets
+loss_fn:
+  _target_: qut01.models.classif.masked_loss_wrapper.MaskedLossWrapper
+  ignore_index: -1
+  loss_fun_to_wrap: # in this case, we'll instantiate the binary cross-entropy loss module directly
+    _target_: torch.nn.BCEWithLogitsLoss
+    weight: null
+    reduction: none # required in order to be "wrapper" by the MaskedLossWrapper
