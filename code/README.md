@@ -10,7 +10,7 @@
 
 ## Description
 
-A deep learning sandbox for Mila's AIMS project.
+A deep learning sandbox for Project AIMS.
 
 This framework is primarily meant to help the prototyping of new models and data loaders. It relies
 on [PyTorch](https://pytorch.org/get-started/locally/) in combination with
@@ -43,13 +43,11 @@ its content so that at least all mandatory variables are filled. These include:
 - `DATA_ROOT`: path to the root directory where all datasets are located. It will be internally
   used via Hydra/OmegaConf through the `utils.data_root_dir` config key. All datamodules that are
   implemented in the framework will likely define their root directory based on this location.
-  For the QUT01-AIMS project experiments running on the Mila cluster, this should be set as
-  `/network/projects/amlrt/qut01-aims/data/`.
+
 - `OUTPUT_ROOT`: path to the root directory where all outputs (logs, checkpoints, plots, ...) will
   be written. It will be internally used via Hydra/OmegaConf through the `utils.output_root_dir`
   config key. It is at that location where experiment and run directories will be created.
-  For the QUT01-AIMS project experiments running on the Mila cluster, this should be set as
-  `/network/projects/amlrt/qut01-aims/logs/`.
+  
 
 Note that this file is machine-specific, and it may contain secrets and API keys. Therefore, it will
 always be ignored by version control (due to the `.gitignore` filters), and you should be careful
