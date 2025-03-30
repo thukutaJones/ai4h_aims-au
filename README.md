@@ -90,7 +90,7 @@ If you use **AIMS.au** in your research, please cite our paper:
 ```bibtex
 @article{bora2025aimsau,
   title={AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements},
-  author={Bora, Adriana Eufrosiana and St-Charles, Pierre-Luc and Bronzi, Mirko and Fansi Tchango, Arsène and Rousseau, Bruno and Mengersen, Kerrie},
+  author={Bora, Adriana Eufrosina and St-Charles, Pierre-Luc and Bronzi, Mirko and Fansi Tchango, Arsène and Rousseau, Bruno and Mengersen, Kerrie},
   journal={arXiv preprint arXiv:2502.07022},
   year={2025},
   note={Camera ready. ICLR 2025},
