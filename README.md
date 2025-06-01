@@ -1,15 +1,20 @@
-# AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
-*Appearing in ICLR 2025*  
+This repository presents published papers and their associated artifacts, developed as part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
+
+This research was developed by Mila - Quebec AI Institute in collaboration with the Queensland University of Technology.
+
+Part of this research was supported by the National Action Plan to Combat Modern Slavery 2020-25 Grants Program, administered by the AttorneyGeneral’s Department.
+
+## Associated Resources
+- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
+- 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
 
 ---
 
-## Overview  
+## Paper 1: AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
+*Appearing in ICLR 2025*  
+📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
 
 We introduce **AIMS.au**, a publicly available dataset designed to support the analysis of modern slavery statements from Australian-based organizations. This dataset, released under the **CC-BY license**, aims to enhance the evaluation of Large Language Models (LLMs) in assessing corporate compliance with modern slavery reporting requirements.  
-
-🔗 This paper is part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
-
-This research was developed by Mila - Quebec AI Institute in collaboration with The Queensland University of Technology.
 
 ### Key Features  
 - **Comprehensive Coverage**: Over **5,700** modern slavery statements sourced from the [**Australian Modern Slavery Register**](https://modernslaveryregister.gov.au/).  
@@ -38,11 +43,7 @@ To our knowledge, **AIMS.au** is the most extensive open source dataset with det
 
 ---
 
-## Availability  
 
-- 📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2502.07022).  
-- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
-- 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
 
 ---
 
@@ -82,10 +83,14 @@ We conducted experiments using a range of **open-source and closed-source langua
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards—full details in the paper. 
 
 ---
+## Paper 3: AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions
+*Appearing in ACL 2025*  
+📄 **Paper**: Available on [arXiv](link).  
+
 
 ## Citation  
 
-If you use **AIMS.au** in your research, please cite our paper:  
+If you use **AIMS.au** in your research, please cite our paper:
 
 ```bibtex
 @article{bora2025aimsau,
@@ -98,5 +103,3 @@ If you use **AIMS.au** in your research, please cite our paper:
   doi={10.48550/arXiv.2502.07022}
 }
 
-# AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions
-*Appearing in ICLR 2025*  
