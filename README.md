@@ -7,7 +7,8 @@ Part of this research was supported by the National Action Plan to Combat Modern
 ## Associated Resources
 - 📂 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
 - 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
-- 💻 The code to reproduce our experimental results is available in the [`code`](code) directory.  
+- 💻 The code to reproduce our experimental results is available in the [`code`](code) directory.
+- 📦 The weights of our best-performing model (Llama3.2 3B, +100 words context)  from our experiments are available on [Figshare](https://figshare.com/articles/dataset/LLAMA_context_100_weights/29174045?file=54904154).
 ---
 
 ## Paper 1: AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
