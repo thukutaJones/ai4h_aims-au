@@ -76,7 +76,8 @@ These models were evaluated based on their ability to assess corporate complianc
 **We introduce:**
 
 1.**AIMSCheck**, an end-to-end framework for compliance validation
-2. Two new annotated datasets from the UK **(AIMS.uk)** and Canada **(AIMS.ca)** to enable cross-jurisdictional benchmarking.
+
+2.Two new annotated datasets from the UK **(AIMS.uk)** and Canada **(AIMS.ca)** to enable cross-jurisdictional benchmarking.
 
 
 ## Citation  
