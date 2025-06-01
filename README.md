@@ -5,9 +5,9 @@ This research was developed by Mila - Quebec AI Institute in collaboration with 
 Part of this research was supported by the National Action Plan to Combat Modern Slavery 2020-25 Grants Program, administered by the AttorneyGeneral’s Department.
 
 ## Associated Resources
-- 📊 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
+- 📂 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
 - 💬 **Prompts**: The prompts used in our experiments can be found in [**prompts**](prompts.docx).
-
+- 💻 The code to reproduce our experimental results is available in the [`code`](code) directory.  
 ---
 
 ## Paper 1: AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
@@ -35,18 +35,6 @@ To our knowledge, **AIMS.au** is the most extensive open source dataset with det
 
 ---
 
-## Table of Contents  
-- [Availability](#availability)  
-- [Dataset Documentation](#dataset-documentation)  
-- [Dataset Statistics](#dataset-statistics)  
-- [Experiments](#experiments)  
-
----
-
-
-
----
-
 ## Dataset Documentation  
 
 The following image illustrates the **correspondence between the AU MSA mandatory criteria** and the **questions designed for annotation** within the **AIMS.au** dataset. It also includes **fictitious examples** of disclosures that could appear in real corporate statements.  
@@ -62,30 +50,33 @@ Below is an overview of the text distribution across **5,731 modern slavery stat
 <img src="stats.png" width="800">  
 
 ---
+### Experimental Setup and Results
+**Task:** sentence-level binary classification across 11 questions.
 
-## Experiments  
+**Evaluated Models:** fine-tuned on AIMS.au (DistilBERT, BERT, Llama2 (7B), Llama3.2 (3B) and zero-shot (GPT-3.5 Turbo), GPT-4o, Llama3.2 (3B).
 
-The code to reproduce our experimental results is available in the [`code`](code) directory.  
+**Input Settings:** no context - classify using only the target sentence, and with context – classify using the sentence plus ±100 surrounding words.
 
-### Models Evaluated  
-We conducted experiments using a range of **open-source and closed-source language models**, including:  
+**Key Results:** fine-tuned models outperform zero-shot models and including context improves results.
 
-- **Open-source models**:  
-  - **DistilBERT** 
-  - **BERT** 
-  - **LLaMA 2 (7B)** 
-  - **LLaMA 3.2 (3B)**
+![image](https://github.com/user-attachments/assets/08dc67b8-8ad1-4451-8afe-9f441b45931e)
 
-- **Closed-source models**:  
-  - **OpenAI GPT-3.5 Turbo**  
-  - **OpenAI GPT-4o**
 
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards—full details in the paper. 
 
 ---
-## Paper 3: AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions
+## Paper 2: AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions
 *Appearing in ACL 2025*  
 📄 **Paper**: Available on [arXiv](link).  
+
+**AIMSCheck** is an end-to-end framework for AI-assisted review of modern slavery statements using Large Language Models (LLMs). It addresses two key challenges:
+1. The difficulty of compliance verification due to the diverse and complex language used in disclosures.
+2. The need for generalizable AI tools across jurisdictions with different legal standards.
+
+**We introduce:**
+
+1.**AIMSCheck**, an end-to-end framework for compliance validation
+2. Two new annotated datasets from the UK **(AIMS.uk)** and Canada **(AIMS.ca)** to enable cross-jurisdictional benchmarking.
 
 
 ## Citation  
