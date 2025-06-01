@@ -79,6 +79,21 @@ These models were evaluated based on their ability to assess corporate complianc
 
 2.Two new annotated datasets from the UK **(AIMS.uk)** and Canada **(AIMS.ca)** to enable cross-jurisdictional benchmarking.
 
+## AIMSCheck
+
+<img src="AIMSCheck.png" width="800">  
+Our contribution is the introduction of AIMSCheck (AI against Modern Slavery Compliance Checks), an end-to-end framework designed to assist human analysts in assessing compliance. As illustrated in the figure above, AIMSCheck operates at three distinct levels:
+
+1. **Sentence-Level**: Classifies each sentence based on its relevance to compliance criteria.
+2. **Token-Level**: Enhances model transparency through explainability metrics.
+3. **Evidence Status**: Tracks sentences that support or refute the implementation or future commitments of measures, which we refer to as evidence.
+
+
+## Generalizability 
+
+We curate a jurisdictional mapping to evaluate generalizability across jurisdictions, as shown in the Figure below. To this end, we introduce the AIMS.uk and AIMS.ca datasets, which are derived from modern slavery statements collected from UK and Canadian government registries. These datasets consist of 50 statements from each jurisdiction that have been manually annotated by a domain expert. These diverse, well-structured datasets enable cross-jurisdictional evaluation of modern slavery disclosures
+
+<img src="Mapping.png" width="800">  
 
 ## Citation  
 
