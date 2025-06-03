@@ -1,4 +1,4 @@
-This repository presents published papers and their associated artifacts, developed as part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims).
+This repository presents published papers and their associated artifacts, developed as part of a larger initiative, [**Project AIMS (AI Against Modern Slavery)**](https://mila.quebec/en/ai4humanity/applied-projects/ai-against-modern-slavery-aims), developed in a partnership between Mila and Queensland University of Technology (QUT). 
 
 This research was developed by Mila - Quebec AI Institute in collaboration with the Queensland University of Technology.
 
