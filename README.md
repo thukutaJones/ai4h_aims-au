@@ -127,3 +127,12 @@ If you use **AIMS.au** in your research, please cite our paper:
   doi={10.48550/arXiv.2502.07022}
 }
 
+@article{bora2025aimscheck,
+  title={AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions},
+  author={Bora, Adriana Eufrosina and Arodi, Akshatha and Zhang, Duoyi and Bannister, Jordan and Bronzi, Mirko and Fansi Tchango, Arsène and Bashar, Md Abul and Nayak, Richi and Mengersen, Kerrie},
+  journal={arXiv preprint arXiv:2506.01671},
+  year={2025},
+  note={To appear at ACL 2025},
+  url={https://arxiv.org/abs/2506.01671},
+  doi={10.48550/arXiv.2506.01671}
+}
