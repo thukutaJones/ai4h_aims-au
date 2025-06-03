@@ -68,7 +68,7 @@ These models were evaluated based on their ability to assess corporate complianc
 ---
 ## Paper 2: AIMSCheck: Leveraging LLMs for AI-Assisted Review of Modern Slavery Statements Across Jurisdictions
 *Appearing in ACL 2025*  
-📄 **Paper**: Available on [arXiv](link).  
+📄 **Paper**: Available on [arXiv](https://arxiv.org/abs/2506.01671).  
 
 **AIMSCheck** is an end-to-end framework for AI-assisted review of modern slavery statements using Large Language Models (LLMs). It addresses two key challenges:
 1. The difficulty of compliance verification due to the diverse and complex language used in disclosures.
