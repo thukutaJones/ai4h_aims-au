@@ -105,9 +105,9 @@ We have created a jurisdictional mapping to assess the generalizability across d
 
 ### Key Results:
 
-1. Fine-tuned models trained on AIMS.au generalise well to AIMS.uk and AIMS.ca, outperforming zero-shot and few-shot baselines.
+1. Fine-tuned models on AIMS.au generalise well to AIMS.uk and AIMS.ca, outperforming zero-shot and few-shot baselines.
 
-2. Few-shot prompting improves GPT-4o performance over zero-shot; CoT further boosts accuracy.
+2. CoT Few-shot prompting improves GPT-4o performance over zero-shot;
 
 3. Contextual input (±100 words) improves performance across models.
 
