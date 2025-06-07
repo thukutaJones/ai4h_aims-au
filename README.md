@@ -60,9 +60,6 @@ Below is an overview of the text distribution across **5,731 modern slavery stat
 
 **Key Results:** Fine-tuned models outperform zero-shot models, and including context improves results.
 
-![image](https://github.com/user-attachments/assets/08dc67b8-8ad1-4451-8afe-9f441b45931e)
-
-
 These models were evaluated based on their ability to assess corporate compliance with modern slavery reporting standards—full details in the paper. 
 
 ---
