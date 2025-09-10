@@ -8,7 +8,8 @@ Part of this research was supported by the National Action Plan to Combat Modern
 - 📂 **Dataset**: Accessible via [Figshare](https://figshare.com/s/1b92ebfde3f2de2be0cf) and [Hugging Face](https://huggingface.co/datasets/mila-ai4h/AIMS.au).
 - 💬 **Prompts**: The prompts used in our experiments can be found in [AIMSPrompts](AIMSPrompts.docx).
 - 💻 The code to reproduce our experimental results is available in the [`code`](code) directory.
-- 📦 The weights of our best-performing model (Llama3.2 3B, +100 words context)  from our experiments are available on [Figshare](https://figshare.com/articles/dataset/LLAMA_context_100_weights/29174045?file=54904154).
+- 📦 The weights of our best-performing model (Llama3.2 3B, +100 words context)  from our experiments on paper AIMS.au and AIMSCheck are available on [Figshare](https://figshare.com/articles/dataset/LLAMA_context_100_weights/29174045?file=54904154).
+- 📦 The weights of our smallest and best-performing model (ModernBERT)  from our experiments in Paper AIMSDistil are available on [GoogleDrive](https://drive.google.com/file/d/12DXXgi5rNRf8r8EKnjmzwR6GnNVTc1WI/view?usp=sharing).
 ---
 
 ## Paper 1: AIMS.au: A Dataset for the Analysis of Modern Slavery Countermeasures in Corporate Statements  
